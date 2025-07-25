@@ -1,3 +1,3 @@
 # Deforestation-Detection
 
-[Click here to download the interactive map](india_map.html)
+[Click here to download and view the interactive map](india_map.html)

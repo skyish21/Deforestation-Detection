@@ -1,4 +1,4 @@
-# 🔥 Deforestation Detection: Fire Type Classification using MODIS Data
+# Deforestation Detection: Fire Type Classification using MODIS Data 🔥 
 
 This project predicts fire types (e.g., deforestation fire, forest fire, or no fire) based on satellite data from the MODIS system using various machine learning models — primarily a **Random Forest Classifier**.
 
@@ -58,6 +58,8 @@ To build an intelligent system that classifies fire incidents using MODIS satell
 ---
 
 ## 🖥️ Streamlit Web App
+
+https://deforestation-detection-vhhqfw4fdfxr5bphwzcxjs.streamlit.app/
 
 The Streamlit app allows users to:
 

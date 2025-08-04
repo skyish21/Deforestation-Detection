@@ -157,9 +157,5 @@ if st.button("🔎 Predict Fire Type"):
 
 st.markdown("---")
 
-'''# Show India Map in Main Area
-st.markdown("### 🗺️ Fire Map of India")
-with open("india_map.html", "r") as f:
-    st.components.v1.html(f.read(), height=400, scrolling=True)'''
 
 

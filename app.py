@@ -16,9 +16,9 @@ if not os.path.exists(model_file):
 model = joblib.load(model_file)
 
 # Load scaler
-scaler = joblib.load('scaler.pkl')
+scaler = joblib.load("scaler.pkl")
 
-st.set_page_config(page_title="Fire Type Classification", layout="wide")
+st.set_page_config(page_title="Fire Type Classification", layout="centered")
 
 # Sidebar Information
 with st.sidebar:
@@ -116,6 +116,7 @@ scaled_input = scaler.transform(input_data)
 # Prediction
 if st.button("🔎 Predict Fire Type"):
     pred = model.predict(scaled_input)[0]
+
     fire_types = {0: "No Fire", 2: "Deforestation Fire", 3: "Forest Fire"}
     st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
 
@@ -123,5 +124,3 @@ if st.button("🔎 Predict Fire Type"):
 st.markdown("### 🗺️ Fire Map of India")
 with open("india_map.html", "r") as f:
     st.components.v1.html(f.read(), height=400, scrolling=True)
-
-

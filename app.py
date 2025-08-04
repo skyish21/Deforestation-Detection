@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import joblib
-import pickle
 import os
 import gdown
 
@@ -17,7 +16,7 @@ if not os.path.exists(model_file):
 model = joblib.load(model_file)
 
 # Load scaler
-scaler = pickle.load(open('scaler.pkl', 'rb'))
+scaler = joblib.load('scaler.pkl')
 
 st.set_page_config(page_title="Fire Type Classification", layout="wide")
 

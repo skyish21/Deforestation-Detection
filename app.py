@@ -112,11 +112,11 @@ with st.expander("ℹ️ What is Brightness?"):
     st.markdown("""
     **Brightness** is the thermal radiation emitted from the fire spot, measured by the satellite.
 
-    🔥 **Higher values** usually indicate:
+    **Higher values** usually indicate:
     - More intense fire
     - Larger flame or higher temperature
 
-    🌱 **Lower values** could mean:
+    **Lower values** could mean:
     - Small or no fire
     - False detection due to warm land
     """)
@@ -195,4 +195,5 @@ if st.button("🔎 Predict Fire Type"):
 
     fire_types = {0: "No Fire", 2: "Deforestation Fire", 3: "Forest Fire"}
     st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
+
 

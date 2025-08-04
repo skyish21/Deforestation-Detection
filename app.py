@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
 import joblib
 import os
 import gdown
@@ -113,7 +112,6 @@ confidence_val = confidence_map[confidence]
 
 # Combine and scale input
 input_data = np.array([[brightness, bright_t31, frp, scan, track, confidence_val]])
-scaler = StandardScaler()
 
 # Scale input using pre-trained scaler
 scaled_input = scaler.transform(input_data)
@@ -133,4 +131,3 @@ st.markdown("---")
 st.markdown("### 🗺️ Fire Map of India")
 with open("india_map.html", "r") as f:
     st.components.v1.html(f.read(), height=400, scrolling=True)
-

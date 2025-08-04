@@ -103,7 +103,8 @@ with st.expander("Fire Map of India (Click to Expand)"):
 
 st.markdown("---")
 # User input fields
-st.subheader("🔍 Enter Feature Values")
+st.subheader("Enter Feature Values 🔍")
+st.markdown("---")
 
 # Brightness input
 brightness = st.slider("Brightness", min_value=290.0, max_value=500.0, value=300.0, step=1.0)
@@ -157,6 +158,7 @@ if st.button("🔎 Predict Fire Type"):
     st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
 
 st.markdown("---")
+
 
 
 

@@ -80,7 +80,7 @@ It takes in six key features related to fire activity and classifies the instanc
 The goal is to support environmental monitoring by detecting harmful fire activities early and accurately.
 """)
 
-with st.expander("Fire Map of India and Description (Click to Expand)"):
+with st.expander("Fire Map of India (Click to Expand)"):
     st.markdown("""
     This map provides a **visual overview of fire occurrences across different regions in India**, as detected by MODIS satellite data.
 
@@ -156,6 +156,7 @@ if st.button("🔎 Predict Fire Type"):
     st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
 
 st.markdown("---")
+
 
 
 

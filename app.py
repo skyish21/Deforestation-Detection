@@ -66,8 +66,9 @@ with st.sidebar:
     )
 
 # Title and Description
-st.markdown("## Deforestation Detection 🔥")
-st.markdown("## Fire Type Classification using MODIS Data")
+st.markdown("# Deforestation Detection ")
+st.markdown("### Fire Type Classification using MODIS Data 🔥")
+st.markdown("---")
 
 # Description
 st.write("""
@@ -100,7 +101,7 @@ with st.expander("Fire Map of India (Click to Expand)"):
     with open("india_map.html", "r") as f:
         st.components.v1.html(f.read(), height=400, scrolling=True)
 
-
+st.markdown("---")
 # User input fields
 st.subheader("🔍 Enter Feature Values")
 
@@ -156,6 +157,7 @@ if st.button("🔎 Predict Fire Type"):
     st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
 
 st.markdown("---")
+
 
 
 

@@ -116,7 +116,7 @@ input_data = np.array([[brightness, bright_t31, frp, scan, track, confidence_val
 # Scale input using pre-trained scaler
 scaled_input = scaler.transform(input_data)
 
-st.markdown("---")
+#st.markdown("---")
 
 # Prediction
 if st.button("🔎 Predict Fire Type"):
@@ -125,9 +125,10 @@ if st.button("🔎 Predict Fire Type"):
     fire_types = {0: "No Fire", 2: "Deforestation Fire", 3: "Forest Fire"}
     st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
 
-st.markdown("---")
+#st.markdown("---")
 
 # Show India Map in Main Area
 st.markdown("### 🗺️ Fire Map of India")
 with open("india_map.html", "r") as f:
     st.components.v1.html(f.read(), height=400, scrolling=True)
+

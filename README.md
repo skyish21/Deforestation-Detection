@@ -89,14 +89,27 @@ The Streamlit app allows users to:
 
 ---
 
-## 📦 Requirements
+## 🔧 Setup Instructions
 
+1. Clone the Repository
+```bash
+git clone https://github.com/skyish21/Deforestation-Detection.git
+cd Deforestation-Detection
+```
 
-Install dependencies with:
+2. Install Required Packages
+Make sure you have Python ≥3.8 and pip installed. Then run:
 ```bash
 pip install -r requirements.txt
 ```
 
-You can also use gdown in app.py to load the model directly from Google Drive.
+3. Run the Streamlit App
+
+You can use gdown in app.py to load the model directly from Google Drive.
+
+```bash
+streamlit run app.py
+```
+This will launch the web interface in your browser where you can try out fire classification using MODIS data
 
 

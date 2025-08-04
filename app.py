@@ -208,7 +208,8 @@ if st.button("Predict Fire Type 🔎 "):
     pred = model.predict(scaled_input)[0]
 
     fire_types = {0: "No Fire", 2: "Deforestation Fire", 3: "Forest Fire"}
-    st.success(f"Predicted Fire Type 🔥 : **{fire_types.get(pred, 'Unknown')}**")
+    st.success(f" 🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
+
 
 
 

@@ -111,7 +111,7 @@ confidence_val = confidence_map[confidence]
 
 # Combine and scale input
 input_data = np.array([[brightness, bright_t31, frp, scan, track, confidence_val]])
-scaled_input = scaler.fit_transform(input_data)
+scaled_input = scaler.transform(input_data)
 
 # Prediction
 if st.button("🔎 Predict Fire Type"):
@@ -123,4 +123,5 @@ if st.button("🔎 Predict Fire Type"):
 st.markdown("### 🗺️ Fire Map of India")
 with open("india_map.html", "r") as f:
     st.components.v1.html(f.read(), height=400, scrolling=True)
+
 

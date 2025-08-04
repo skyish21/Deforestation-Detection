@@ -112,11 +112,11 @@ with st.expander("ℹ️ What is Brightness?"):
     st.markdown("""
     **Brightness** is the thermal radiation emitted from the fire spot, measured by the satellite.
 
-    **Higher values** usually indicate:
+    **Higher values**:
     - More intense fire
     - Larger flame or higher temperature
 
-    **Lower values** could mean:
+    **Lower values**:
     - Small or no fire
     - False detection due to warm land
     """)
@@ -141,8 +141,10 @@ with st.expander("ℹ️ What is FRP?"):
     st.markdown("""
     **FRP** represents the amount of energy emitted by the fire.
 
-    **Higher FRP** = more energetic fire → likely a **forest or deforestation fire**  
-    **Lower FRP** may be **no fire** or a small heat source
+    **Higher FRP**:
+    - More energetic fire → likely a **forest or deforestation fire**  
+    **Lower FRP**:
+    - May be **no fire** or a small heat source
     """)
 
 # Scan input
@@ -151,8 +153,10 @@ with st.expander("ℹ️ What is Scan?"):
     st.markdown("""
     **Scan** is the angular width of the satellite swath capturing the fire.
     
-    **Higher values** → edge of the swath → potential distortion or missed fires
-    **Lower values** → object closer to nadir (center view) → more accurate detection  
+    **Higher values**:
+    - Edge of the swath → potential distortion or missed fires
+    **Lower values**:
+    - Object closer to nadir (center view) → more accurate detection  
     """)
 
 # Track input
@@ -161,8 +165,10 @@ with st.expander("ℹ️ What is Track?"):
     st.markdown("""
     **Track** represents the satellite’s position across its orbital path at the time of detection.
 
-    **Higher track values**: central, more reliable readings  
-    **Lower values**: near edge, slightly less accurate
+    **Higher values**: 
+    - Central, more reliable readings  
+    **Lower values**: 
+    - Near edge, slightly less accurate
     """)
 
 # Confidence input
@@ -171,9 +177,12 @@ with st.expander("ℹ️ What is Confidence?"):
     st.markdown("""
     **Confidence** indicates how sure the system is that a fire is present.
 
-    **High**: 90–100% certainty — very likely a real fire  
-    **Nominal**: medium probability  
-    **Low**: possibly a false detection or noise
+    **High**: 
+    - 90–100% certainty — very likely a real fire  
+    **Nominal**: 
+    - Medium probability  
+    **Low**: 
+    - Possibly a false detection or noise
     """)
 
 
@@ -195,5 +204,6 @@ if st.button("🔎 Predict Fire Type"):
 
     fire_types = {0: "No Fire", 2: "Deforestation Fire", 3: "Forest Fire"}
     st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
+
 
 

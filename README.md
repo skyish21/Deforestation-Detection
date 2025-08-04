@@ -79,7 +79,6 @@ The Streamlit app allows users to:
 .
 ├── app.py                    # Streamlit app
 ├── scaler.pkl                # Scaler used to normalize input features
-├── rf_model.pkl              # Trained Random Forest model
 ├── india_map.html            # Interactive HTML map
 ├── README.md                 # You are here!
 ├── requirements.txt          # Python dependencies

@@ -2,13 +2,13 @@
 
 This project predicts fire types (e.g., deforestation fire, forest fire, or no fire) based on satellite data from the MODIS system using various machine learning models — primarily a **Random Forest Classifier**.
 
-
+---
 
 ## 📌 Project Objective
 
 To build an intelligent system that classifies fire incidents using MODIS satellite data to help with **deforestation monitoring**, **wildfire tracking**, and **environmental safety**.
 
-
+---
 
 ## 🧪 Features Used
 
@@ -21,7 +21,7 @@ To build an intelligent system that classifies fire incidents using MODIS satell
 | Track               | Satellite’s orbital position at detection. Affects detection accuracy.      |
 | Confidence Level    | Fire detection certainty: low, nominal, or high.                            |
 
-
+---
 
 ## 🏷️ Labels
 
@@ -31,7 +31,7 @@ To build an intelligent system that classifies fire incidents using MODIS satell
 | 2           | Deforestation Fire  |
 | 3           | Forest Fire         |
 
-
+---
 
 ## 🤖 Models Tested and Accuracy
 
@@ -46,7 +46,7 @@ To build an intelligent system that classifies fire incidents using MODIS satell
 
 📌 **Note**: Tree-based models like Gradient Boosting and LightGBM were also tested to explore improvements in performance. However, **Random Forest outperformed all** in accuracy and generalization.
 
-
+---
 
 ## 🧠 Model Details
 
@@ -55,13 +55,12 @@ To build an intelligent system that classifies fire incidents using MODIS satell
 - **Trained On**: Cleaned and encoded MODIS data
 - **Saved Model File**: [rf_model.pkl](https://drive.google.com/file/d/1dgR94Ty-H7PZeuXlbSBCbSFY3nAnL_IT/view?usp=drive_link)(Google Drive)
 
-
+---
 
 ## 🖥️ Streamlit Web App
 
 https://deforestation-detection-vhhqfw4fdfxr5bphwzcxjs.streamlit.app/
 
----
 
 The Streamlit app allows users to:
 
@@ -72,7 +71,7 @@ The Streamlit app allows users to:
 
 📍 India Map is embedded using a `india_map.html` file for interactive display.
 
-
+---
 
 ## 📂 Folder Structure
 
@@ -87,6 +86,8 @@ The Streamlit app allows users to:
 └── data/                     # Raw and processed MODIS data (optional)
 
 ```
+
+---
 
 ## 📦 Requirements
 

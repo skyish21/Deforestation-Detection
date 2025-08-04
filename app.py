@@ -109,34 +109,73 @@ st.markdown("---")
 # Brightness input
 brightness = st.slider("Brightness", min_value=290.0, max_value=500.0, value=300.0, step=1.0)
 with st.expander("ℹ️ What is Brightness?"):
-    st.markdown("**Brightness** is the thermal radiation from the fire spot. Higher values indicate more intense fires.")
+    st.markdown("""
+    **Brightness** is the thermal radiation emitted from the fire spot, measured by the satellite.
+
+    🔥 **Higher values** usually indicate:
+    - More intense fire
+    - Larger flame or higher temperature
+
+    🌱 **Lower values** could mean:
+    - Small or no fire
+    - False detection due to warm land
+    """)
 
 # Brightness T31 input
 bright_t31 = st.slider("Brightness T31", min_value=280.0, max_value=400.0, value=290.0, step=1.0)
 with st.expander("ℹ️ What is Brightness T31?"):
-    st.markdown("**Brightness T31** is the brightness temperature from channel 31 (IR). Used to filter out land heat.")
+    st.markdown("""
+    **Brightness T31** is the temperature measured from infrared channel 31 — used as a background reference.
+
+    **Higher values**:
+    - May indicate hot background (like dry soil or rocks)
+    - Could reduce contrast between fire and background
+
+    **Lower values**:
+    - Easier fire detection when background is cooler
+    """)
 
 # FRP input
 frp = st.slider("Fire Radiative Power (FRP)", min_value=0.0, max_value=100.0, value=15.0, step=0.5)
 with st.expander("ℹ️ What is FRP?"):
-    st.markdown("**FRP** represents energy emitted by the fire. Higher FRP → more intense fire activity.")
+    st.markdown("""
+    **FRP** represents the amount of energy emitted by the fire.
+
+    **Higher FRP** = more energetic fire → likely a **forest or deforestation fire**  
+    **Lower FRP** may be **no fire** or a small heat source
+    """)
 
 # Scan input
 scan = st.slider("Scan", min_value=0.0, max_value=5.0, value=1.0, step=0.1)
 with st.expander("ℹ️ What is Scan?"):
-    st.markdown("**Scan** represents the size of the satellite swath. Can affect resolution and detection.")
+    st.markdown("""
+    **Scan** is the angular width of the satellite swath capturing the fire.
+    
+    **Higher values** → edge of the swath → potential distortion or missed fires
+    **Lower values** → object closer to nadir (center view) → more accurate detection  
+    """)
 
+# Track input
 track = st.number_input("Track", value=1.0)
 with st.expander("ℹ️ What is Track?"):
-    st.markdown("**Track** refers to the fraction of the satellite's orbit path where the fire was detected. "
-                "Higher values often indicate detections near the center of the swath, which are more accurate.")
-    
+    st.markdown("""
+    **Track** represents the satellite’s position across its orbital path at the time of detection.
+
+    **Higher track values**: central, more reliable readings  
+    **Lower values**: near edge, slightly less accurate
+    """)
+
+# Confidence input
 confidence = st.selectbox("Confidence Level", ["low", "nominal", "high"])
 with st.expander("ℹ️ What is Confidence?"):
-    st.markdown("**Confidence** is the quality score assigned to a fire detection.\n"
-                "- **Low**: less reliable detection\n"
-                "- **Nominal**: moderate confidence\n"
-                "- **High**: highly reliable detection")
+    st.markdown("""
+    **Confidence** indicates how sure the system is that a fire is present.
+
+    **High**: 90–100% certainty — very likely a real fire  
+    **Nominal**: medium probability  
+    **Low**: possibly a false detection or noise
+    """)
+
 
 # Map confidence to numeric
 confidence_map = {"low": 0, "nominal": 1, "high": 2}
@@ -156,3 +195,4 @@ if st.button("🔎 Predict Fire Type"):
 
     fire_types = {0: "No Fire", 2: "Deforestation Fire", 3: "Forest Fire"}
     st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
+

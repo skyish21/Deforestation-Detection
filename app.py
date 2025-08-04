@@ -23,7 +23,10 @@ st.set_page_config(page_title="Fire Type Classification", layout="centered")
 
 # Sidebar Information
 with st.sidebar:
-    st.title("📘 Project Overview")
+    st.markdown("## 📚 Info Panel")
+    st.markdown("---")
+
+    st.markdown("📘 Project Overview")
     st.markdown("""
     **Deforestation Detection: Fire Type Classification**
 
@@ -47,18 +50,25 @@ with st.sidebar:
     - **0**: No Fire  
     - **2**: Deforestation Fire  
     - **3**: Forest Fire
-
-    ---
-
-    **Author**: [Ishika Sharma](https://www.linkedin.com/in/ishika-sharma/)  
-    **GitHub**: [skyish21](https://github.com/skyish21)
-
-    ---
+                
     """)
 
+    st.markdown("---")
+    st.markdown("## 👩‍💻 About Me")
+    st.markdown("Trying out new things in ML + NLP!")
+    st.markdown(
+        """
+        <div style='text-align: center;'>
+            <a href='https://github.com/skyish21' target='_blank'>GitHub 🔗</a>&nbsp;|&nbsp;
+            <a href='https://www.linkedin.com/in/ishika-sharma-79a67a326/' target='_blank'>💼 LinkedIn</a>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 # Title and Description
-st.markdown("## Deforestation Detection")
-st.markdown("## Fire Type Classification using MODIS Data 🔥")
+st.markdown("## Deforestation Detection 🔥")
+st.markdown("## Fire Type Classification using MODIS Data")
 
 # Description
 st.write("""
@@ -116,7 +126,7 @@ input_data = np.array([[brightness, bright_t31, frp, scan, track, confidence_val
 # Scale input using pre-trained scaler
 scaled_input = scaler.transform(input_data)
 
-#st.markdown("---")
+st.markdown("---")
 
 # Prediction
 if st.button("🔎 Predict Fire Type"):
@@ -125,10 +135,9 @@ if st.button("🔎 Predict Fire Type"):
     fire_types = {0: "No Fire", 2: "Deforestation Fire", 3: "Forest Fire"}
     st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
 
-#st.markdown("---")
+st.markdown("---")
 
 # Show India Map in Main Area
 st.markdown("### 🗺️ Fire Map of India")
 with open("india_map.html", "r") as f:
     st.components.v1.html(f.read(), height=400, scrolling=True)
-

@@ -18,7 +18,7 @@ if not os.path.exists(model_file):
 model = joblib.load(model_file)
 
 # Load scaler
-scaler = joblib.lod('scaler.pkl')
+scaler = joblib.load('scaler.pkl')
 
 st.set_page_config(page_title="Fire Type Classification", layout="centered")
 
@@ -133,3 +133,4 @@ st.markdown("---")
 st.markdown("### 🗺️ Fire Map of India")
 with open("india_map.html", "r") as f:
     st.components.v1.html(f.read(), height=400, scrolling=True)
+

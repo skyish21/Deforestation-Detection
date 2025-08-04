@@ -80,6 +80,27 @@ It takes in six key features related to fire activity and classifies the instanc
 The goal is to support environmental monitoring by detecting harmful fire activities early and accurately.
 """)
 
+with st.expander("Fire Map of India and Description (Click to Expand)"):
+    st.markdown("""
+    This map provides a **visual overview of fire occurrences across different regions in India**, as detected by MODIS satellite data.
+
+    **What it shows:**
+    - Geolocations of recorded fire events.
+    - Distribution of different **fire types** (e.g., deforestation, forest fire, or no fire).
+    - Hotspot regions where fires are more frequent.
+
+    **Why it's useful:**
+    - Enables **spatial understanding** of fire patterns.
+    - Helps **forest departments and researchers** identify high-risk zones.
+    - Aids in **early warning and response planning**.
+
+    """)
+
+    # Show India Map
+    with open("india_map.html", "r") as f:
+        st.components.v1.html(f.read(), height=400, scrolling=True)
+
+
 # User input fields
 st.subheader("🔍 Enter Feature Values")
 
@@ -136,8 +157,9 @@ if st.button("🔎 Predict Fire Type"):
 
 st.markdown("---")
 
-# Show India Map in Main Area
+'''# Show India Map in Main Area
 st.markdown("### 🗺️ Fire Map of India")
 with open("india_map.html", "r") as f:
-    st.components.v1.html(f.read(), height=400, scrolling=True)
+    st.components.v1.html(f.read(), height=400, scrolling=True)'''
+
 

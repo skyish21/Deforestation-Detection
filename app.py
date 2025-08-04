@@ -1,5 +1,7 @@
 import streamlit as st
 import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
 import joblib
 import os
 import gdown
@@ -16,7 +18,7 @@ if not os.path.exists(model_file):
 model = joblib.load(model_file)
 
 # Load scaler
-scaler = joblib.load("scaler.pkl")
+scaler = joblib.lod('scaler.pkl')
 
 st.set_page_config(page_title="Fire Type Classification", layout="centered")
 
@@ -57,7 +59,7 @@ with st.sidebar:
 
 # Title and Description
 st.markdown("## Deforestation Detection")
-st.markdown("## 🔥 Fire Type Classification using MODIS Data")
+st.markdown("## Fire Type Classification using MODIS Data 🔥")
 
 # Description
 st.write("""
@@ -111,7 +113,12 @@ confidence_val = confidence_map[confidence]
 
 # Combine and scale input
 input_data = np.array([[brightness, bright_t31, frp, scan, track, confidence_val]])
+scaler = StandardScaler()
+
+# Scale input using pre-trained scaler
 scaled_input = scaler.transform(input_data)
+
+st.markdown("---")
 
 # Prediction
 if st.button("🔎 Predict Fire Type"):
@@ -119,6 +126,8 @@ if st.button("🔎 Predict Fire Type"):
 
     fire_types = {0: "No Fire", 2: "Deforestation Fire", 3: "Forest Fire"}
     st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
+
+st.markdown("---")
 
 # Show India Map in Main Area
 st.markdown("### 🗺️ Fire Map of India")

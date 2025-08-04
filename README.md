@@ -98,18 +98,17 @@ cd Deforestation-Detection
 ```
 
 2. Install Required Packages
-Make sure you have Python ≥3.8 and pip installed. Then run:
+- Make sure you have Python ≥3.8 and pip installed. Then run:
 ```bash
 pip install -r requirements.txt
 ```
 
 3. Run the Streamlit App
-
-You can use gdown in app.py to load the model directly from Google Drive.
+- You can use gdown in app.py to load the model directly from Google Drive.
 
 ```bash
 streamlit run app.py
 ```
-This will launch the web interface in your browser where you can try out fire classification using MODIS data
+- This will launch the web interface in your browser where you can try out fire classification using MODIS data
 
 

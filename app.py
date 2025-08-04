@@ -1,9 +1,22 @@
 import streamlit as st
 import numpy as np
+import joblib
 import pickle
+import os
+import gdown
 
-# Load model and scaler
-model = pickle.load(open('rf_model.pkl', 'rb'))
+# URL or ID of your Google Drive model
+model_id = '1dgR94Ty-H7PZeuXlbSBCbSFY3nAnL_IT'  # Replace with your actual file ID
+model_file = 'rf_model.pkl'
+
+# Check if model is already downloaded
+if not os.path.exists(model_file):
+    gdown.download(f"https://drive.google.com/uc?id={model_id}", model_file, quiet=False)
+
+# Now you can load the model as usual
+model = joblib.load(model_file)
+
+# Load scaler
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 st.set_page_config(page_title="Fire Type Classification", layout="wide")

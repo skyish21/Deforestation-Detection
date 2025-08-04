@@ -67,7 +67,7 @@ with st.sidebar:
 
 # Title and Description
 st.markdown("# Deforestation Detection ")
-st.markdown("### Fire Type Classification using MODIS Data 🔥")
+st.markdown("### Fire Type Classification using MODIS Data")
 st.markdown("---")
 
 # Description
@@ -204,11 +204,12 @@ scaled_input = scaler.transform(input_data)
 st.markdown("---")
 
 # Prediction
-if st.button("🔎 Predict Fire Type"):
+if st.button("Predict Fire Type 🔎 "):
     pred = model.predict(scaled_input)[0]
 
     fire_types = {0: "No Fire", 2: "Deforestation Fire", 3: "Forest Fire"}
-    st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
+    st.success(f"Predicted Fire Type 🔥 : **{fire_types.get(pred, 'Unknown')}**")
+
 
 
 

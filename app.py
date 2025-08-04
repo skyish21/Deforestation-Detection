@@ -162,7 +162,7 @@ with st.expander("ℹ️ What is Scan?"):
     """)
 
 # Track input
-track = st.number_input("Track (0.0 to 1.0)", min_value=0.0, max_value=1.0, value=0.5, step=0.01, format="%.2f")
+track = st.number_input(min_value=0.0, max_value=1.0, value=0.5, step=0.01, format="%.2f")
 with st.expander("ℹ️ What is Track?"):
     st.markdown("""
     **Track** represents the satellite’s position across its orbital path at the time of detection.
@@ -209,6 +209,7 @@ if st.button("Predict Fire Type 🔎 "):
 
     fire_types = {0: "No Fire", 2: "Deforestation Fire", 3: "Forest Fire"}
     st.success(f" 🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
+
 
 
 

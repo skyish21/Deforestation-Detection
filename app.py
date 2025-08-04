@@ -143,6 +143,7 @@ with st.expander("ℹ️ What is FRP?"):
 
     **Higher FRP**:
     - More energetic fire → likely a **forest or deforestation fire**  
+    
     **Lower FRP**:
     - May be **no fire** or a small heat source
     """)
@@ -155,6 +156,7 @@ with st.expander("ℹ️ What is Scan?"):
     
     **Higher values**:
     - Edge of the swath → potential distortion or missed fires
+    
     **Lower values**:
     - Object closer to nadir (center view) → more accurate detection  
     """)
@@ -167,6 +169,7 @@ with st.expander("ℹ️ What is Track?"):
 
     **Higher values**: 
     - Central, more reliable readings  
+    
     **Lower values**: 
     - Near edge, slightly less accurate
     """)
@@ -179,8 +182,10 @@ with st.expander("ℹ️ What is Confidence?"):
 
     **High**: 
     - 90–100% certainty — very likely a real fire  
+    
     **Nominal**: 
     - Medium probability  
+    
     **Low**: 
     - Possibly a false detection or noise
     """)
@@ -204,6 +209,7 @@ if st.button("🔎 Predict Fire Type"):
 
     fire_types = {0: "No Fire", 2: "Deforestation Fire", 3: "Forest Fire"}
     st.success(f"🔥 Predicted Fire Type: **{fire_types.get(pred, 'Unknown')}**")
+
 
 
 

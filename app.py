@@ -55,7 +55,6 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown("## 👩‍💻 About Me")
-    st.markdown("Trying out new things in ML + NLP!")
     st.markdown(
         """
         <div style='text-align: center;'>
@@ -141,3 +140,4 @@ st.markdown("---")
 st.markdown("### 🗺️ Fire Map of India")
 with open("india_map.html", "r") as f:
     st.components.v1.html(f.read(), height=400, scrolling=True)
+
